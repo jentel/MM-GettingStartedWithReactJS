@@ -22,6 +22,15 @@
   font-size: large;
 }
 
+.form-errors{
+  border-style: solid;
+  border-color: red;
+  border-radius: 5px;
+  background-color: #FFB2AE;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
