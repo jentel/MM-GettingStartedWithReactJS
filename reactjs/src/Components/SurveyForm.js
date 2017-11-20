@@ -36,19 +36,19 @@ export class SurveyForm extends Component{
       }
     
       handleBucketInputChange = (bucketValue) => {
-        this.setState({buckets: bucketValue}, this.validateForm());
+        this.setState({buckets: bucketValue}, this.validateForm(bucketValue));
       }
 
-      validateForm = () => {
-        let currentBucket = this.state.buckets;
+      validateForm = (bucketValue) => {
+        let currentBucket = bucketValue;
         let bucketCountValidation = "";
 
-        if(currentBucket < 5){
-            bucketCountValidation = "You need more antioxidants in your day";
+        if(currentBucket < 5 && currentBucket !== ''){
+            bucketCountValidation = "I think you need more flour. You never know how many cookies you may want.";
         }
 
         this.setState({
-                formsErrors:{
+                formErrors:{
                     nameAlphabetValidation: "",
                     bucketCountValidation: bucketCountValidation
                 }
