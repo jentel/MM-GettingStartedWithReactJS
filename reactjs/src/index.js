@@ -14,6 +14,8 @@ const userInformationReducer = (state={}, action) => {
         case "UPDATE_USER_AGE":
             return { ... state, age: action.payload}
             break;
+        case "UPDATE_USER_ITEM":
+            return { ... state, item: action.payload}
         default:
             return state;
     }
@@ -39,23 +41,23 @@ const reducers = combineReducers({
 
 const applicationStore = createStore(reducers, {
     userInformation: {
-        name: "Rick",
-        age: 52,
-        email:"tonyt@magenic.com"
+        name: "Lapinibernatus",
+        age: 3000000000,
+        item:"Translator Cone"
     },
-    preferredGreeting: "Hello"
+    preferredGreeting: "*clears throat* Bwa bwa :)"
 });
 
 applicationStore.subscribe(() => {
     console.log("Store has been updated", applicationStore.getState());
 })
 
-applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Morty"});
-applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Nick"});
-applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Tony"});
-applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Art"});
-applicationStore.dispatch({type:"UPDATE_USER_AGE", payload:14});
-applicationStore.dispatch({type:"UPDATE_PREFERRED_GREETING", payload:"Oh Geez!"});
+applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Rabbid"});
+applicationStore.dispatch({type:"UPDATE_USER_AGE", payload:5});
+applicationStore.dispatch({type:"UPDATE_USER_ITEM", payload:"Toilet Brush"});
+applicationStore.dispatch({type:"UPDATE_USER_NAME", payload:"Rocket Rabbid"});
+applicationStore.dispatch({type:"UPDATE_USER_ITEM", payload:"Pressurized Tank"});
+applicationStore.dispatch({type:"UPDATE_PREFERRED_GREETING", payload:"BAAAAHHHH BAAAAAAAAAAAAAHHHH!!!!"});
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
