@@ -14,9 +14,16 @@ import udpateFormErrors from '../Actions/updateFormErrorsAction';
 
 import store from '../AppStore';
 
+@connect((store) => {
+  return {
+    name: store.nameReducer,
+    flour: store.flourReducer,
+    buckets: store.bucketReducer,
+    formErrors: store.formErrorsReducer
+  }
+})
 
-class SurveyForm extends Component{
-    
+export class SurveyForm extends Component{  
   handleSubmit = (event)=>
   {
     alert(JSON.stringify(this.props));
@@ -64,14 +71,3 @@ class SurveyForm extends Component{
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    name: state.nameReducer,
-    flour: state.flourReducer,
-    buckets: state.bucketReducer,
-    formErrors: state.formErrorsReducer
-  }
-}
-
-export default connect(mapStateToProps)(SurveyForm);

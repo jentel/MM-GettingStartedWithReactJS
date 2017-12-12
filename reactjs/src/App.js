@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import SurveyForm from "./Components/SurveyForm";
-
-// import {Provider} from 'react-redux';
+import {SurveyForm} from "./Components/SurveyForm";
 
 class App extends Component {
   render() {
