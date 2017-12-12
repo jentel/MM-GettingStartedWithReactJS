@@ -7,7 +7,10 @@ export class FlourInput extends Component{
   
     render(){
       return (
-        <input value={this.props.flour} onChange={this.handleInputChange}/>
+        <div>
+          <p>What kind of flour do you like? (Yes, as in the baking kind)</p>
+          <input value={this.props.flour} onChange={this.handleInputChange}/>
+        </div>
       ) 
     }
   }

@@ -9,7 +9,11 @@ import {connect} from 'react-redux';
 
 import updateUserName from "../Actions/updateUserNameAction";
 import updateFlourType from '../Actions/updateFlourTypeAction';
-import updateBucketCount from '../Actions/updateBucketCountAction.JS';
+import updateBucketCount from '../Actions/updateBucketCountAction';
+import udpateFormErrors from '../Actions/updateFormErrorsAction';
+
+import store from '../AppStore';
+
 
 class SurveyForm extends Component{
     
@@ -29,38 +33,29 @@ class SurveyForm extends Component{
 
   handleBucketInputChange = (bucketValue) => {
     this.props.dispatch(updateBucketCount(bucketValue));
-    this.validateForm(bucketValue);
+    this.validateForm();
   }
 
-  validateForm = (bucketValue) => {
-    let currentBucket = bucketValue;
-    let bucketCountValidation = "";
+  validateForm = () => {
+    let currentBucket = store.getState()["bucketReducer"];
+    let bucketCountValid = "";
 
     if(currentBucket < 5 && currentBucket !== ''){
-        bucketCountValidation = "I think you need more flour. You never know how many cookies you may want.";
+        bucketCountValid = "I think you need more flour. You never know how many cookies you may want.";
     }
 
-    this.setState({
-            formErrors:{
-                nameAlphabetValidation: "",
-                bucketCountValidation: bucketCountValidation
-            }
-        }
-    )
+    this.props.dispatch(udpateFormErrors({bucketCountValidation: bucketCountValid}));
   }
 
   render(){
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
-                <p>What is your name?</p>
-                <NameInput name={this.props.name} onInputChange={this.handleNameInputChange}></NameInput>
+                <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
-                <p>What kind of flour do you like? (Yes, as in the baking kind)</p>
-                <FlourInput flour={this.props.flour} onInputChange={this.handleFlourInputChange}></FlourInput>
+                <FlourInput flour={this.props.flour} onInputChange={this.handleFlourInputChange} />
                 <br />
-                <p>How many buckets of flour do you want?</p>
-                <BucketInput buckets={this.props.buckets} onInputChange={this.handleBucketInputChange}></BucketInput>
+                <BucketInput buckets={this.props.buckets} onInputChange={this.handleBucketInputChange} />
                 <br/>
                 <input type="submit" value="Submit"/>
             </form>
@@ -72,13 +67,10 @@ class SurveyForm extends Component{
 
 const mapStateToProps = (state) => {
   return {
-    name: state.name,
-    flour: state.flour,
-    buckets: state.buckets,
-    formErrors:{
-      nameAlphabetValidation: state.nameAlphabetValidation,
-      bucketCountValidation: state.bucketCountValidation
-    }
+    name: state.nameReducer,
+    flour: state.flourReducer,
+    buckets: state.bucketReducer,
+    formErrors: state.formErrorsReducer
   }
 }
 

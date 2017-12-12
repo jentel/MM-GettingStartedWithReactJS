@@ -4,7 +4,7 @@ import './App.css';
 
 import SurveyForm from "./Components/SurveyForm";
 
-import {Provider} from 'react-redux';
+// import {Provider} from 'react-redux';
 
 class App extends Component {
   render() {

@@ -7,7 +7,10 @@ export class BucketInput extends Component{
     
     render(){
       return (
-        <input value={this.props.buckets} onChange={this.handleOnChange}/>
+        <div>
+          <p>How many buckets of flour do you want?</p>
+          <input value={this.props.buckets} onChange={this.handleOnChange}/>
+        </div>
       )
     }
   }

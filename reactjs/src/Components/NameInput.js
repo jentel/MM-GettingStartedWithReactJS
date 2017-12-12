@@ -7,7 +7,10 @@ export class NameInput extends Component{
   
     render(){
       return(
-         <input value={this.props.name} onChange={this.handleInputChange}/>
+        <div>
+          <p>What is your name?</p>
+          <input value={this.props.name} onChange={this.handleInputChange}/>
+        </div>
       )
     }
   }

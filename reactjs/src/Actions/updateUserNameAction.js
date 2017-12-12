@@ -1,6 +1,6 @@
 export default function updateUserName(updatedUserName){
     return{
-        type: "UPDATE_NAME_IMPUT",
+        type: "UPDATE_NAME_INPUT",
         payload:updatedUserName
     }
 }
