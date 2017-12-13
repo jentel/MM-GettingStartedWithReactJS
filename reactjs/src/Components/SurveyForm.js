@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-
+import {connect} from 'react-redux';
 import {NameInput} from "./NameInput";
 import {FlourInput} from "./FlourInput";
 import {BucketInput} from "./BucketInput";
 import {FormErrors} from "./FormErrors";
-
-import {connect} from 'react-redux';
+import {BaconIpsum} from "./BaconIpsum";
 
 import updateUserName from "../Actions/updateUserNameAction";
 import updateFlourType from '../Actions/updateFlourTypeAction';
@@ -50,6 +49,9 @@ export class SurveyForm extends Component{
     if(currentBucket < 5 && currentBucket !== ''){
         bucketCountValid = "I think you need more flour. You never know how many cookies you may want.";
     }
+    else if(currentBucket !== RegExp("[^0-9]" ) && currentBucket !== ''){
+        bucketCountValid = "That's not a number....";
+    }
 
     this.props.dispatch(udpateFormErrors({bucketCountValidation: bucketCountValid}));
   }
@@ -58,6 +60,7 @@ export class SurveyForm extends Component{
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
+                <BaconIpsum/>
                 <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
                 <FlourInput flour={this.props.flour} onInputChange={this.handleFlourInputChange} />
