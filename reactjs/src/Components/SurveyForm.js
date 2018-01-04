@@ -4,6 +4,7 @@ import {NameInput} from "./NameInput";
 import {FlourInput} from "./FlourInput";
 import {BucketInput} from "./BucketInput";
 import {FormErrors} from "./FormErrors";
+import {BaconIpsum} from './BaconIpsum';
 
 import {connect} from 'react-redux';
 
@@ -14,8 +15,16 @@ import udpateFormErrors from '../Actions/updateFormErrorsAction';
 
 import store from '../AppStore';
 
+@connect((store) => {
+  return {
+    name: store.nameReducer,
+    flour: store.flourReducer,
+    buckets: store.bucketReducer,
+    formErrors: store.formErrorsReducer
+  }
+})
 
-class SurveyForm extends Component{
+export default class SurveyForm extends Component{
     
   handleSubmit = (event)=>
   {
@@ -51,6 +60,7 @@ class SurveyForm extends Component{
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
+                <BaconIpsum/>
                 <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
                 <FlourInput flour={this.props.flour} onInputChange={this.handleFlourInputChange} />
@@ -64,14 +74,3 @@ class SurveyForm extends Component{
     )
   }
 }
-
-const mapStateToProps = (state) => {
-  return {
-    name: state.nameReducer,
-    flour: state.flourReducer,
-    buckets: state.bucketReducer,
-    formErrors: state.formErrorsReducer
-  }
-}
-
-export default connect(mapStateToProps)(SurveyForm);
