@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class FlourInput extends Component{
+export class BaconInput extends Component{
     handleInputChange = (event) => {
       this.props.onInputChange(event.target.value);
     }
@@ -8,8 +8,8 @@ export class FlourInput extends Component{
     render(){
       return (
         <div>
-          <p>What kind of flour do you like? (Yes, as in the baking kind)</p>
-          <input value={this.props.flour} onChange={this.handleInputChange}/>
+          <p>What kind of bacon do you like?</p>
+          <input value={this.props.bacon} onChange={this.handleInputChange}/>
         </div>
       ) 
     }

@@ -1,14 +1,14 @@
 import {combineReducers} from 'redux';
 import nameReducer from './nameReducer';
-import flourReducer from './flourReducer';
-import bucketReducer from './bucketReducer';
+import baconReducer from './baconReducer';
+import baconStripReducer from './baconStripReducer';
 import formErrorsReducer from './formErrorsReducer';
 import baconIpsumReducer from './baconIpsumReducer';
 
 export default combineReducers({
     nameReducer,
-    flourReducer,
-    bucketReducer,
+    baconReducer,
+    baconStripReducer,
     formErrorsReducer,
     baconIpsumReducer
 });

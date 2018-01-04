@@ -1,25 +1,27 @@
 import React, {Component} from 'react';
 
 import {NameInput} from "./NameInput";
-import {FlourInput} from "./FlourInput";
-import {BucketInput} from "./BucketInput";
+import {BaconInput} from "./BaconInput";
+import {BaconStripsInput} from "./BaconStripsInput";
 import {FormErrors} from "./FormErrors";
 import {BaconIpsum} from './BaconIpsum';
 
 import {connect} from 'react-redux';
 
 import updateUserName from "../Actions/updateUserNameAction";
-import updateFlourType from '../Actions/updateFlourTypeAction';
-import updateBucketCount from '../Actions/updateBucketCountAction';
+import updateBaconType from '../Actions/updateBaconTypeAction';
+import updateBaconStripsCount from '../Actions/updateBaconStripsCountAction';
 import udpateFormErrors from '../Actions/updateFormErrorsAction';
 
 import store from '../AppStore';
 
+const BACON_STRIP_REDUCER = "baconStripReducer";
+
 @connect((store) => {
   return {
     name: store.nameReducer,
-    flour: store.flourReducer,
-    buckets: store.bucketReducer,
+    bacon: store.baconReducer,
+    baconStrip: store.baconStripReducer,
     formErrors: store.formErrorsReducer
   }
 })
@@ -36,24 +38,35 @@ export default class SurveyForm extends Component{
     this.props.dispatch(updateUserName(nameValue));
   }
 
-  handleFlourInputChange = (flourValue) => {
-    this.props.dispatch(updateFlourType(flourValue));
+  handleBaconInputChange = (baconValue) => {
+    this.props.dispatch(updateBaconType(baconValue));
   }
 
-  handleBucketInputChange = (bucketValue) => {
-    this.props.dispatch(updateBucketCount(bucketValue));
+  handleBaconStripInputChange = (baconStripValue) => {
+    this.props.dispatch(updateBaconStripsCount(baconStripValue));
     this.validateForm();
   }
 
   validateForm = () => {
-    let currentBucket = store.getState()["bucketReducer"];
-    let bucketCountValid = "";
+    let currentBacon = store.getState()[BACON_STRIP_REDUCER];
+    let baconCountValid = "";
+    var regexp = new RegExp("[^0-9]");
 
-    if(currentBucket < 5 && currentBucket !== ''){
-        bucketCountValid = "I think you need more flour. You never know how many cookies you may want.";
+    if(currentBacon !== '')
+    {
+        if(regexp.test(currentBacon))
+        {
+            baconCountValid = "Those are 'words' not numbers!";
+        }
+        else if(currentBacon < 5){
+            baconCountValid = "I think you need more bacon. Bacon is good.";
+        }
+        else if(currentBacon >= 20){
+            baconCountValid = "Woah! Better slow down! We're not one to judge, but eating too much is not good."
+        }
     }
 
-    this.props.dispatch(udpateFormErrors({bucketCountValidation: bucketCountValid}));
+    this.props.dispatch(udpateFormErrors({baconStripCountValidation: baconCountValid}));
   }
 
   render(){
@@ -63,9 +76,9 @@ export default class SurveyForm extends Component{
                 <BaconIpsum/>
                 <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
-                <FlourInput flour={this.props.flour} onInputChange={this.handleFlourInputChange} />
+                <BaconInput bacon={this.props.bacon} onInputChange={this.handleBaconInputChange} />
                 <br />
-                <BucketInput buckets={this.props.buckets} onInputChange={this.handleBucketInputChange} />
+                <BaconStripsInput baconStrip={this.props.baconStrip} onInputChange={this.handleBaconStripInputChange} />
                 <br/>
                 <input type="submit" value="Submit"/>
             </form>
