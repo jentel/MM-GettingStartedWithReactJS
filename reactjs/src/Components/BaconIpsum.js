@@ -20,7 +20,7 @@ export class BaconIpsum extends Component {
 
         return (
             <div>
-                Hello World
+                <h1>About Us</h1>
                 {
                     isFetchingData ?
                     (
@@ -39,7 +39,7 @@ export class BaconIpsum extends Component {
                     ) :
                     null
                 }
-                <div>
+                <div className="bacon-ipsum">
                     {this.props.data.baconIpsumText}
                 </div>
             </div>

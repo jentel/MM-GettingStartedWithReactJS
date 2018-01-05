@@ -35,3 +35,22 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@import url("../node_modules/react-responsive-carousel/lib/styles/carousel.min.css");
+
+.carousel {
+  margin:auto;
+  /* max-width: 50%; */
+}
+
+.bacon-ipsum {
+  margin: auto;
+  padding: 10px;
+}
+
+.App-footer {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
