@@ -21,10 +21,6 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Bacon</h1>
-         
-         
-        
-     
         </header>
 
         <Switch className="App-intro">
@@ -32,7 +28,6 @@ class App extends Component {
           <Route path="/about" component={BaconIpsum}/>
           <Route path="/survey" component={SurveyForm}/> 
         </Switch>  
-      
       </div>
     );
   }
