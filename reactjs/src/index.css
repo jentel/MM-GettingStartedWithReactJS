@@ -2,4 +2,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+
+  background: linear-gradient(
+    rgba(255, 0, 0, 0.5),
+    rgba(255, 0, 0, 0.5)
+  ), url("Images/rrBacon_mirror.png");
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './food-bacon.png';
+import { Link, Route, Switch } from 'react-router-dom';
+import logo from './Images/food-bacon.png';
 import './App.css';
-import { Link, Route,Switch } from 'react-router-dom';
 
 import SurveyForm from "./Components/SurveyForm";
 import {BaconIpsum} from './Components/BaconIpsum';
@@ -22,12 +22,16 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Bacon</h1>
         </header>
-
-        <Switch className="App-intro">
+        <div className="App-content">
+        <Switch>
           <Route exact path="/" component={BaconCarousel}/>
           <Route path="/about" component={BaconIpsum}/>
           <Route path="/survey" component={SurveyForm}/> 
         </Switch>  
+        </div>
+        <footer className="App-footer">
+          
+        </footer>
       </div>
     );
   }

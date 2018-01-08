@@ -18,8 +18,5 @@ export default function getBaconIpsumData() {
                 dispatch(baconIpsumUpdateBaconText(updateValue));
                 dispatch(baconIpsumFetchAPIDataComplete());
             })
-            // .catch(() => {
-
-            // })
     }
 }

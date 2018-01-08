@@ -1,18 +1,15 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import store from '../AppStore';
 
 import {NameInput} from "./NameInput";
 import {BaconInput} from "./BaconInput";
 import {BaconStripsInput} from "./BaconStripsInput";
 import {FormErrors} from "./FormErrors";
-
-import {connect} from 'react-redux';
-
 import updateUserName from "../Actions/updateUserNameAction";
 import updateBaconType from '../Actions/updateBaconTypeAction';
 import updateBaconStripsCount from '../Actions/updateBaconStripsCountAction';
 import udpateFormErrors from '../Actions/updateFormErrorsAction';
-
-import store from '../AppStore';
 
 const BACON_STRIP_REDUCER = "baconStripReducer";
 
@@ -55,7 +52,7 @@ export default class SurveyForm extends Component{
     {
         if(regexp.test(currentBacon))
         {
-            baconCountValid = "Those are not numbers!";
+            baconCountValid = "That's not a number!";
         }
         else if(currentBacon < 5){
             baconCountValid = "I think you need more bacon. Bacon is good.";
@@ -72,6 +69,7 @@ export default class SurveyForm extends Component{
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
+                <h1>Survey</h1>
                 <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
                 <BaconInput bacon={this.props.bacon} onInputChange={this.handleBaconInputChange} />

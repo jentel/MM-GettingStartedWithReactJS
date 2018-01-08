@@ -39,9 +39,9 @@ export class BaconIpsum extends Component {
                     ) :
                     null
                 }
-                <div className="bacon-ipsum">
-                    {this.props.data.baconIpsumText}
-                </div>
+                <article className="bacon-ipsum">
+                    <p>{this.props.data.baconIpsumText}</p>
+                </article>
             </div>
         )
     }

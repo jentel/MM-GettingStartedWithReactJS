@@ -5,11 +5,12 @@
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  padding: 30px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: rgb(233, 6, 6);
+  height: 200px;
   padding: 20px;
   color: white;
 }
@@ -20,6 +21,7 @@
 
 .App-intro {
   font-size: large;
+  
 }
 
 .form-errors{
@@ -38,10 +40,10 @@
 
 @import url("../node_modules/react-responsive-carousel/lib/styles/carousel.min.css");
 
-.carousel {
+/* .carousel {
   margin:auto;
   /* max-width: 50%; */
-}
+/*} */
 
 .bacon-ipsum {
   margin: auto;
@@ -51,8 +53,11 @@
 .App-footer {
   background-color: #222;
   height: 150px;
-  padding: 20px;
   color: white;
+}
+
+.App-content {
+ color: white; /*rgba(255, 153, 153, 0.616) */
 }
 
 ul {
@@ -60,7 +65,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(173, 0, 0);
 }
 
 li {
@@ -76,5 +81,5 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: rgb(206, 26, 26);
 }
