@@ -4,7 +4,6 @@ import {NameInput} from "./NameInput";
 import {BaconInput} from "./BaconInput";
 import {BaconStripsInput} from "./BaconStripsInput";
 import {FormErrors} from "./FormErrors";
-import {BaconIpsum} from './BaconIpsum';
 
 import {connect} from 'react-redux';
 
@@ -73,7 +72,6 @@ export default class SurveyForm extends Component{
     return (
         <div>
             <form onSubmit={this.handleSubmit}>
-                <BaconIpsum/>
                 <NameInput name={this.props.name} onInputChange={this.handleNameInputChange} />
                 <br />
                 <BaconInput bacon={this.props.bacon} onInputChange={this.handleBaconInputChange} />
