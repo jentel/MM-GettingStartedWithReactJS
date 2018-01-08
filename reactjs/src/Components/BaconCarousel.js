@@ -26,15 +26,15 @@ export class BaconCarousel extends Component {
                     showStatus={false}
                     onClickItem={this.handleClick}>
             <div>
-                <img src="https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/quizzes/bacon_sizzling_facts_rmq/650x350_bacon_sizzling_facts_rmq.jpg" alt="lake"/>
+                <img src="http://www.mylilikoikitchen.com/wp-content/uploads/2014/04/Crispy-Bacon-2.jpg" alt="lake"/>
                 <p className="legend">Legend 1</p>
             </div>
             <div>
-                <img src="https://i.amz.mshcdn.com/fgl4j1041-6dOSjJ8N4Rx4hgMc4=/950x534/filters:quality(90)/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F651734%2F66c8c540-8930-4174-9680-177b27639f4c.jpg" alt="road" />
+                <img src="http://2.bp.blogspot.com/_vOHPw22N2SI/TOaD1B95VLI/AAAAAAAADOM/keA_zFu30VI/s1600/pasta%2Bwith%2Bsausage%2Bwagon%2Bwheels%2Bwith%2Bartichoke%2Bbacon%2Bjam%2B110.JPG" alt="road" />
                 <p className="legend">Legend 2</p>
             </div>
             <div> 
-                <img src="https://365daysofbacon.files.wordpress.com/2013/02/bacon_heart.jpg" alt="track" />
+                <img src="https://i.ytimg.com/vi/KBf5oe1VyFk/sddefault.jpg#404_is_fine" alt="track" />
                 <p className="legend">Legend 3</p>
             </div>
         </Carousel> 
