@@ -3,11 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-
-import {Provider} from 'react-redux';
 import store from "./AppStore";
 
-import { BrowserRouter} from 'react-router-dom';
+import {Provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
 
 window.store = store;
 

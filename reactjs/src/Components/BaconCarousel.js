@@ -39,7 +39,7 @@ export class BaconCarousel extends Component {
             </div>
             <div>
                 <img src={Weave} alt="Bacon Weave" />
-                <p className="legend">Easiest way to keep bacon together!<br/>Find out how to do this, and more by clicking on the link!</p>
+                <p className="legend">Easiest way to keep bacon together!<br/>Find out how to do this, and more by clicking here!</p>
             </div>
             <div> 
                 <img src={Better} alt="Bacon is makes everything better!" />
