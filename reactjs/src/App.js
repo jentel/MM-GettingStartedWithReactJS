@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <div className="App">
        <nav className="navbar navbar-light">
-          <ul className="nav navbar-nav">
+          <ul className="nav-navbar-nav">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/survey">Survey</Link></li>
@@ -22,15 +22,13 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to Bacon</h1>
         </header>
-        <div className="App-content">
         <Switch>
           <Route exact path="/" component={BaconCarousel}/>
           <Route path="/about" component={BaconIpsum}/>
           <Route path="/survey" component={SurveyForm}/> 
         </Switch>  
-        </div>
         <footer className="App-footer">
-          
+          <p>Welcome to Bacon was made using Reactjs</p>
         </footer>
       </div>
     );

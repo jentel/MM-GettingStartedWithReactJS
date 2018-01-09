@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color:white;
 }
 
 .App-logo {
@@ -12,7 +13,6 @@
   background-color: rgb(233, 6, 6);
   height: 200px;
   padding: 20px;
-  color: white;
 }
 
 .App-title {
@@ -21,14 +21,24 @@
 
 .App-intro {
   font-size: large;
-  
+}
+
+.App-footer {
+  background-color: #222;
+  height: 150px;
+}
+
+.App-footer p {
+  float: left;
+  font-size: small;
+  bottom: 5px;
 }
 
 .form-errors{
   border-style: solid;
   border-color: red;
   border-radius: 5px;
-  background-color: #FFB2AE;
+  background-color: rgb(167, 11, 5);
   max-width: 50%;
   margin: 0 auto;
 }
@@ -38,29 +48,22 @@
   to { transform: rotate(360deg); }
 }
 
-@import url("../node_modules/react-responsive-carousel/lib/styles/carousel.min.css");
+@import url("../node_modules/react-responsive-carousel/lib/styles/carousel.css");
 
-/* .carousel {
+.carousel {
   margin:auto;
-  /* max-width: 50%; */
-/*} */
+}
+
+.carousel img {
+  height: 500px;
+}
 
 .bacon-ipsum {
   margin: auto;
   padding: 10px;
 }
 
-.App-footer {
-  background-color: #222;
-  height: 150px;
-  color: white;
-}
-
-.App-content {
- color: white; /*rgba(255, 153, 153, 0.616) */
-}
-
-ul {
+.nav-navbar-nav {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -83,3 +86,4 @@ li a {
 li a:hover {
   background-color: rgb(206, 26, 26);
 }
+

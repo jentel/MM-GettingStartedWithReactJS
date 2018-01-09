@@ -7,43 +7,44 @@ import Better from '../Images/Bacon-is-better-bacon.gif';
 
 export class BaconCarousel extends Component {
     handleClick = (event) => {
+
+        const cripsyBacon = 0;
+        const baconWeave = 1;
+
         switch(event)
         {
-            case 0:
-                window.open("https://www.google.com");
+            case cripsyBacon:
+                window.open("http://baconmethod.com/");
                 break;
-            case 1:
-                window.open("https://www.bing.com");
+            case baconWeave:
+                window.open("https://www.buzzfeed.com/mikespohr/19-bacon-hacks-that-are-guaranteed-to-change-your-life-for");
                 break;
             default:
-                window.open("https://www.github.com");
+                window.open("https://www.buzzfeed.com/spoonuniversity/bacon-is-bae?utm_term=.qp8QBWR6m#.gvMG0Z71B");
                 break;
         }
     }
 
     render() {
         return (
-        <div>
-            <Carousel className = "carousel"
-                        autoPlay
-                        infiniteLoop
-                        showThumbs={false}
-                        showStatus={false}
-                        onClickItem={this.handleClick}>
-                <div>
-                    <img src={Crispy} alt="Crispy Bacon"/>
-                    <p className="legend">Legend 1</p>
-                </div>
-                <div>
-                    <img src={Weave} alt="Bacon Weave" />
-                    <p className="legend">Legend 2</p>
-                </div>
-                <div> 
-                    <img src={Better} alt="track" />
-                    <p className="legend">Legend 3</p>
-                </div>
-            </Carousel> 
-            <p> why isn't this working??</p>
-        </div>
+        <Carousel   className="carousel"
+                    autoPlay
+                    infiniteLoop
+                    showThumbs={false}
+                    showStatus={false}
+                    onClickItem={this.handleClick}>
+            <div>
+                <img src={Crispy} alt="Crispy Bacon"/>
+                <p className="legend">Love crispy bacon but don't know how to make it?<br/>Click here to find out how!</p>
+            </div>
+            <div>
+                <img src={Weave} alt="Bacon Weave" />
+                <p className="legend">Easiest way to keep bacon together!<br/>Find out how to do this, and more by clicking on the link!</p>
+            </div>
+            <div> 
+                <img src={Better} alt="Bacon is makes everything better!" />
+                <p className="legend">Click here to learn more bacon recipes!</p>
+            </div>
+        </Carousel> 
     )};
 }
