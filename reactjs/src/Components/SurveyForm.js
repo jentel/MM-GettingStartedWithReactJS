@@ -26,7 +26,11 @@ export default class SurveyForm extends Component{
     
   handleSubmit = (event)=>
   {
-    alert(JSON.stringify(this.props));
+    alert("Hello ".concat(this.props.name, "!\n", 
+          "You said your favorite type of bacon was: ", this.props.bacon, ".\n",
+          "You wanted this many strips of bacon: ", this.props.baconStrip, ".\n",
+          "And errors? ", JSON.stringify(this.props.formErrors), "\n",
+          "Thank you for taking our survey!"));
     event.preventDefault();
   }
 
@@ -76,9 +80,11 @@ export default class SurveyForm extends Component{
                 <br />
                 <BaconStripsInput baconStrip={this.props.baconStrip} onInputChange={this.handleBaconStripInputChange} />
                 <br/>
-                <input type="submit" value="Submit"/>
+                <FormErrors errors={this.props.formErrors}></FormErrors>
+                <br/>
+                <input className="submit" type="submit" value="Submit"/>
             </form>
-            <FormErrors errors={this.props.formErrors}></FormErrors>
+
         </div>
     )
   }

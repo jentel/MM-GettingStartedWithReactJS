@@ -25,13 +25,18 @@
 
 .App-footer {
   background-color: #222;
-  height: 150px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 .App-footer p {
   float: left;
   font-size: small;
   bottom: 5px;
+  position: absolute;
+  bottom: 0;
 }
 
 .form-errors{
@@ -85,5 +90,18 @@ li a {
 
 li a:hover {
   background-color: rgb(206, 26, 26);
+}
+
+.submit {
+  padding: 14px 40px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  background-color: black;
+  color: white;
+}
+
+.submit:hover {
+  background-color: rgb(254, 114, 184);
+  color: black;
 }
 
